@@ -107,3 +107,22 @@ https://juejin.im/post/5ad3fa47518825619d4d3a11
 7、node Steam 用过吗?
 
 9、es6 的一些用法?
+
+> 认识javascript中的作用域和上下文
+https://yanhaijing.com/javascript/2013/08/30/understanding-scope-and-context-in-javascript/
+
+> 揭秘JavaScript中谜一样的this
+https://yanhaijing.com/javascript/2013/12/28/demystifying-this-in-javascript/
+
+> JavaScript中的this关键字
+https://yanhaijing.com/javascript/2014/04/30/javascript-this-keyword/
+
+
+> JavaScript的作用域和提升机制
+https://yanhaijing.com/javascript/2014/04/30/JavaScript-Scoping-and-Hoisting/
+
+> 了解JavaScript的执行上下文
+https://yanhaijing.com/javascript/2014/04/29/what-is-the-execution-context-in-javascript/
+
+> 原型链
+https://coding.imooc.com/lesson/129.html#mid=6338
