@@ -16,7 +16,7 @@
    1、React 15 中,每次更新时, 都是从根组件或setState 后组件开始, 更新整个子树.
 
    2、React 16 早期将原来的diff 过程拆分成两个阶段, 第一个阶段叫 reconcile, 也就是原来diff 虚拟dom 的过程。第二个阶段叫commit,commit 就是对应早期版本的patch过程.，在并发模式下，可能多次reconcile 才执行一次，commit.
-
+   
    第一阶段:将虚拟DOM转换成Fiber,Fiber 转换成组件实例或真实DOM（不插入DOM树,插入DOM树会reflow）,还会执行一些轻量的钩子(ComponentWillMount) 等.Fiber转换后两者明显会耗时.
 
    第二阶段:commit 是将水面下的效果浮现出来,比如将节点插入到Dom 树, 修复节点的属性样式文本内容, 执行如componentDidXXX 这样的重量钩子,执行ref 操作.
