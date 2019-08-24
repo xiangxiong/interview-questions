@@ -36,7 +36,6 @@ Component vs PureComponent 什么区别?
 1、PureComponent 继承了 Component。但是在原型链式扩展了 isPureComponent 的属性.
 2、有 isPureComponent  的属性会进行浅比较.
 
-
 浅比较是怎么实现的?
 1、是比较两个对象是否相等. 源码是通过Object.is 方法来实现的. 比较的是对象是否相等. 但是没有比较多层嵌套的对象以及函数.
 如何实现:
@@ -49,12 +48,10 @@ React.Component 里面有啥?
 2、forceUpdate.
 3、state 的更新的入口.
 
-
 React Hooks 诞生的背景是什么?
 1、 Hook 是一些可以让你在函数组件里面使用state 以及生命周期等特性的函数。Hook 不能在class 中使用，以及更好的复用代码.
 2、和 class 相比有哪些优点?
 在这个 class 中，我们需要在两个生命周期函数中编写重复的代码. 而hooks 不需要.
-
 
 react Hooks 解决什么问题?
 在组件之间复用状态逻辑很难.
@@ -75,19 +72,14 @@ ref 用过吗?
 2、ref 有三种用法, string ref,call back ref,createRef.
 3、推荐使用:createRef.callback ref 不推荐使用 string ref.
 
-
 为什么不推荐使用ref?
 1、当 ref 定义为string 时,需要 React 追踪当前正在渲染的组件,在 reconciliation 阶段, React Element 创建
 和更新的过程中, ref 会被包装为一个闭包函数, 等待 commit 阶段被执行，这会对React 的性能产生一些影响.
 2、当使用 render callback 模式的时候,使用 string ref 会造成 ref 挂载位置产生歧义.
 
-
-
 react 16  版本有哪些新的改变?
 
-
 react 源码看过哪些?
-
 
 redux 相关的问题:
 1、中间件用过哪些?
