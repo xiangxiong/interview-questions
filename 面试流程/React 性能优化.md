@@ -29,8 +29,6 @@
 
     * 参考文献:
         * 1、https://juejin.im/post/5b45d406f265da0f8e19d4c8.
-    
-    * 
 
 * 解读 Beyond React 16 by Dan Abramov - JsConf.
 
@@ -39,8 +37,8 @@
             * React 在渲染（render）的时候，不会阻塞现在的线程。
             * 如果你的设备足够快，你会感觉渲染是同步的。
             * 如果你设备非常慢，你会感觉还算是灵敏的。
-            * 虽然是异步渲染，但是你将会看到完整的渲染，而不是一个组件一行行的渲染出来。
-            * 
+            * 虽然是异步渲染，但是你将会看到完整的渲染，而不是一个组件一行行的渲染出来.
+
         * 可以在哪些场景下使用? 3个场景.
         * 优缺点是什么?
         * 如何在我的项目中使用?
@@ -51,16 +49,14 @@
             * 
     *  Suspense
         * 主要解决什么问题?
-            * Suspense主要解决的就是网络IO问题。网络IO问题其实就是我们现在用Redux+saga等等一系列乱七八糟的库来解决的「副作用」问题。
+            * Suspense主要解决的就是网络IO问题。网络IO问题其实就是我们现在用Redux+saga等等一系列乱七八糟的库来解决的「副作用」问题。 data-fetching.
         * 可以在哪些场景下使用? 3个场景.
             * 引入新的api，可以使得任何state更新暂停，直到条件满足时，再渲染（像async/await）.
             * 可以在任何一个组件里放置异步获取数据，而不用做多余的设置
             * 在网速非常快的时候，可设置，整个数据到达Dom，更新完毕以后再渲染
             * 会给我们提供 high-level (createFetcher)和 low-level( ) 的 API，可以供给业务代码和一些小组件的书写。
 
-    * Lazy
-        *
-        * 
+    * Lazy:
 
 * 参考文献:
     * https://www.youtube.com/watch?v=v6iR3Zk4oDY  Time Slicing 和 Suspense  Dan.

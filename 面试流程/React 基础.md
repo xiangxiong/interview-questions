@@ -12,7 +12,7 @@
    详解diff:
     React 将 Virtual DOM 树转换成 actual dom 树的最少操作过程叫调和(reconciliation).
     将 O(n3) 复杂度的问题转换成O(n) 复杂度的问题.
-
+    
    1、React 15 中,每次更新时, 都是从根组件或setState 后组件开始, 更新整个子树.
 
    2、React 16 早期将原来的diff 过程拆分成两个阶段, 第一个阶段叫 reconcile, 也就是原来diff 虚拟dom 的过程。第二个阶段叫commit,commit 就是对应早期版本的patch过程.，在并发模式下，可能多次reconcile 才执行一次，commit.
@@ -419,6 +419,8 @@ hooks 基本原理:
         2、具有较好的可扩展性、
         3、支持动态组合。在运行时,整体对象可以选择不同类型的局部对象.
 
+    全局和局部状态怎么区分?
+
 
     * Component vs PureComponent 什么区别?
         1、PureComponent 继承了 Component。但是在原型链式扩展了 isPureComponent 的属性.
@@ -426,15 +428,14 @@ hooks 基本原理:
 
         浅比较是怎么实现的?
         1、是比较两个对象是否相等. 源码是通过Object.is 方法来实现的. 比较的是对象是否相等. 但是没有比较多层嵌套的对象以及函数.
+
         如何实现:
         1、通过判断基本数据类型. Object.is 
-        2、判断两个对象的长度是否一致。
-        3、然后通过循环的方式判断两个对象是否相等
-
+        2、判断两个对象的长度是否一致.
+        3、然后通过循环的方式判断两个对象是否相等.
 
     * React Fiber 部分:
         * 
-
 
     * React 源码:
         *  把 react schedule 的流程图画出来,讲解.
