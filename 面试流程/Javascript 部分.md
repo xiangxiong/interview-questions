@@ -173,8 +173,6 @@ var foo = {
 foo.baz(); // foo - 因为baz()方法被调用时术语foo对象
 ```
 
-
-
 > JavaScript中的this关键字
 https://yanhaijing.com/javascript/2014/04/30/javascript-this-keyword/
 
