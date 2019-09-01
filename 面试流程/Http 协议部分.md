@@ -23,11 +23,31 @@ http://fex.baidu.com/blog/2014/05/what-happen/
 浏览器进程检查当前url是否和之前打开的渲染进程根域名是否相同，如果相同，则复用原来的进程，如果不同，则开启新的渲染进程.
 
 传输数据、更新状态
- 8.1 渲染进程准备好后，浏览器向渲染进程发起“提交文档”的消息，渲染进程接收到消息和网络进程建立传输数据的“管道”
+8.1 渲染进程准备好后，浏览器向渲染进程发起“提交文档”的消息，渲染进程接收到消息和网络进程建立传输数据的“管道”
 8.2 渲染进程接收完数据后，向浏览器发送“确认提交”
 8.3 浏览器进程接收到确认消息后更新浏览器界面状态：安全、地址栏url、前进后退的历史状态、更新web页面.
 参考文献:
 https://time.geekbang.org/column/article/117637
+
+记忆:
+1、解析阶段.
+2、响应流程.
+3、渲染阶段.
+
+http 1.0 vs http 1.1 vs http 2.0 
+HTTPS与HTTP的一些区别
+1、HTTPS可以有效的防止运营商劫持，解决了防劫持的一个大问题。
+2、HTTP和HTTPS使用的是完全不同的连接方式，用的端口也不一样，前者是80，后者是443。
+
+HTTP1.0和HTTP1.1的一些区别:
+1、长连接，HTTP 1.1支持长连接（PersistentConnection）和请求的流水线（Pipelining）处理，在一个TCP连接上可以传送多个HTTP请求和响应。
+2、缓存处理，在HTTP1.0中主要使用header里的If-Modified-Since,Expires来做为缓存判断的标准，HTTP1.1则引入了更多的缓存控制策略例如Entity tag，If-Unmodified-Since, If-Match, If-None-Match等更多可供选择的缓存头来控制缓存策略。
+
+HTTP2.0性能惊人
+1、服务端推送（server push）
+2、多路复用（MultiPlexing.
+
+https://juejin.im/entry/5981c5df518825359a2b9476
 
 
 
