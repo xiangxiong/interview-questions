@@ -7,42 +7,36 @@
     * 如果符合条件就请求工作调度.
     
 *  // Update the source fiber's expiration time
-
 ```
- if (
+  if(
     !isWorking &&
     nextRenderExpirationTime !== NoWork &&
     expirationTime < nextRenderExpirationTime
-  ) {
+   ){
     // This is an interruption. (Used for performance tracking.)
     interruptedBy = fiber;
     resetStack();
   }
 
   function resetStack(){
-
-  if (nextUnitOfWork !== null) {
-    let interruptedWork = nextUnitOfWork.return;
-    while (interruptedWork !== null) {
-      unwindInterruptedWork(interruptedWork);
-      interruptedWork = interruptedWork.return;
+    if (nextUnitOfWork !== null) {
+      let interruptedWork = nextUnitOfWork.return;
+      while (interruptedWork !== null) {
+        unwindInterruptedWork(interruptedWork);
+        interruptedWork = interruptedWork.return;
+      }
     }
+    if (__DEV__) {
+      ReactStrictModeWarnings.discardPendingWarnings();
+      checkThatStackIsEmpty();
+    }
+    nextRoot = null;
+    nextRenderExpirationTime = NoWork;
+    nextLatestAbsoluteTimeoutMs = -1;
+    nextRenderDidError = false;
+    nextUnitOfWork = null;
   }
-
-  if (__DEV__) {
-    ReactStrictModeWarnings.discardPendingWarnings();
-    checkThatStackIsEmpty();
-  }
-
-  nextRoot = null;
-  nextRenderExpirationTime = NoWork;
-  nextLatestAbsoluteTimeoutMs = -1;
-  nextRenderDidError = false;
-  nextUnitOfWork = null;
-}
-
 ```
-
 
 ```
  markPendingPriorityLevel(root, retryTime);
@@ -53,14 +47,13 @@
     * 在一次渲染中产生的更新需要使用相同的时间.
     * 在一次批处理的更新应该得到相同的时间.
     * 挂起任务用于记录的时候应该相同.
-  
 
   * reactScheduler 调度过程:
 
     * 流程图解析:
       * ReactDom.render,setState,forceUpdate。多会产生更新,然后进入scheduleWork 进行调度,第一步操作是addRootToScheuler (可以解释为，我们在更新的过程中不仅仅存在一个root 节点, 每次调用一个ReactDom.render 多会产生fiber 节点) 这些节点可以在内部进行setState 调度,他们会独立的UpdateQueen,有独立的Fiber Tree, 来进行应用的更新, 一个应用当中可能存在多个Root,所以这个时候就要去维护一个在同一时间可能有多个Root 会更新存在,所以需要有一个统一的地方去维护,这个就是addRootToScheuler 的一个作用.
 
-    * 加入之后我们要判断是否正在render阶段或者前后root不同,如果正式在render 阶段,或者前后root不同,我们就调用requestWork, 就要开始进行工作了,如果不是则进行return, 因为之前的任务可能正在做, 或者处于这个阶段我们不需要主动去获取requestWork, 去进行一次更新了。
+    * 加入之后我们要判断是否正在render阶段或者前后root不同,如果正式在render 阶段,或者前后root不同,我们就调用requestWork, 就要开始进行工作了,如果不是则进行return, 因为之前的任务可能正在做, 或者处于这个阶段我们不需要主动去获取requestWork, 去进行一次更新了.
 
     * 关于 requestWork 里面做了什么? 主要判断一下 expirationTime 是否是Sync,回想一下,我们在创建一个Update 的时候，我们在调用 ReactDom.render, setState，forceUpdate 去创建一个更新,我们要计算一个 expirationTime 来计算Sync 的expirationTime 或者 异步的expiration Time，这个时候他最终导致, 我们整体的一个更新模式的不同, 因为如果是Sync 模式,代表着这个更新要立马执行,要立马更新到最终的domTree 上面, 所以我们调用的是 performSyncWork, 如果他是一个Sync 模式的，说明他的优先级不是特别高, 他会进入一个 scheuleCallbackWithExpirationTime 调度的流程, 因为他可以不立即更新, 因为他本身的期望，就是 exprationTime 结束之前能够被更新完成就可以了, 所以他优先级非常低, 会进入一个整个调度的流程里面, 
 
