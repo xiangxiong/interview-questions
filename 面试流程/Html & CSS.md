@@ -101,7 +101,6 @@ BFC的原理（渲染规则）,IFC：
 
 
 > css盒模型
-
 1、基本概念: 标准模型+IE模型.
 2、标准模型和IE模型区别.
 标准模型：content.  IE: content+border+padding.

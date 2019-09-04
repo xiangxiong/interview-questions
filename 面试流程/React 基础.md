@@ -117,7 +117,7 @@
             if (!isBatchingUpdates && !isRendering) {
             performSyncWork();
             }
-        }
+            }
         }
     ```
     batchedUpdates 会让所有的state 全部更新完之后,在执行finally 方法 performSyncWork（） 去更新状态.
@@ -150,7 +150,7 @@
     * https://codesandbox.io/s/lOo5AV12M.
     * https://codepen.io/gaearon/pen/wqvxGa?editors=0010
 
- * 在React Hook 中已经没有生命周期的概念, 取而代之用 useEffect 去模拟对应的生命周期方法.
+* 在React Hook 中已经没有生命周期的概念, 取而代之用 useEffect 去模拟对应的生命周期方法.
 * 概念性的问题:
 * react 生命周期有哪些?
     * react 组件的生命周期有三个不同的阶段:
