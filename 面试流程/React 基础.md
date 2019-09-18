@@ -138,9 +138,7 @@
     updateComponent 负责管理生命周期中的 componentWillReceiveProps、shouldComponentUpdate、componentWillUpdate、render 和 componentDidUpdate.
 
 * UNMOUNTING 对应的方法:
-
-    unmountComponent 负责管理生命周期中的 componentWillUnmount。
-
+    unmountComponent 负责管理生命周期中的 componentWillUnmount.
 
 * 出彩的地方:
     * 16 版本里面新增了:componentDidCatch 这个钩子函数，划分出错误组件与边界组件，每个边界组件能修复下方组件错误一次，再次出错，转交给更上层的组件来处理，解决异常处理问题.
@@ -190,8 +188,7 @@ hooks 基本原理:
 * hooks 基本原理.
     * 初次渲染的时候，按照 useState，useEffect 的顺序，把 state，deps 等按顺序塞到 memoizedState 数组中。
     * 更新的时候，按照顺序，从 memoizedState 中把上次记录的值拿出来。
-
-
+    
 * hooks 的api 的用法.
 
         * useState.
@@ -210,12 +207,12 @@ hooks 基本原理:
             * Hook 允许你在重新渲染之间保持对相同的回调引用以使得 shouldComponentUpdate 继续工作.
 
         * useMemo.
-            * memo  如果 props 的数据没有变化不会触发重新渲染..
+            * memo 如果 props 的数据没有变化不会触发重新渲染..
             * React.memo 等效于 PureComponent，但它只比较 props.
             * React.memo 不比较 state，因为没有单一的 state 对象可供比较.
 
         * useRef.
-
+        
         * useImperativeHandle.
 
         * useLayoutEffect.
@@ -340,9 +337,7 @@ hooks 基本原理:
 
      * Context api：
         定义: Context 提供了一个无需为每层组件手动添加 props，就能在组件树间进行数据传递的方法.
-
         场景: redux 传递store, mobx 传递store.
-
 
      * 高阶组件:
         定义: 1、高阶组件本质是一个高阶函数，最大的好处是解耦和灵活性.

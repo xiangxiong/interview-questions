@@ -247,7 +247,6 @@ BFC的原理（渲染规则）,IFC：
 3、行内块 (display为inline-block)
 5、弹性盒 (display为flex或inline-flex)
 
-
 清除浮动有哪些方式？
 (1）在浮动元素下方添加一个非浮动元素
 <div> <div style="float:left;width:45%;"></div> <div style="float:right;width:45%;"></div> <div style="clear:both;"></div> </div>
@@ -302,7 +301,6 @@ https://segmentfault.com/a/1190000013424772
 
 ### 小程序相关
 * 小程序的基本原理.
-* 
 
 ### 项目类
-* 
+*  https://developers.weixin.qq.com/miniprogram/dev/framework/subpackages/basic.html

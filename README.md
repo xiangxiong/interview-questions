@@ -22,7 +22,7 @@ interview-questions
     7、createPortal 用过吗?
     8、component vs pureCompont 什么区别?
     9、setState 做什么事情?
-
+    
 3、Javascript 基础知识?
     1、闭包是什么?
     2、什么是原型链？
@@ -35,7 +35,7 @@ interview-questions
     9、url 到加载发生了什么?
     10、Jsonp 的原理是什么?
     11、asyc await 区别?
-    
+
 4、React 原理还要看看.
     1、Fiber 算法?
     2、diff 原理?

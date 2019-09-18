@@ -1,13 +1,13 @@
 Javascript 相关的问题:
 
 > 1、浏览器解析的过程.
- (1). HTML 解析成 dom Tree StyleSheets 解析成 cssdomtree.两者AttachMent 合并成 RenderTree. RenderTree 包含的是Html,Css 但并不包含告诉浏览器哪个元素在哪个位置上面.通过Layout 才能真正的显示这个元素的宽高颜色，在RenderTree中显示出来.
+
+(1). HTML 解析成 dom Tree StyleSheets 解析成 cssdomtree.两者AttachMent 合并成 RenderTree.
+RenderTree 包含的是Html,Css 但并不包含告诉浏览器哪个元素在哪个位置上面.通过Layout 才能真正的显示这个元素的宽高颜色，在RenderTree中显示出来.
 Painting. 把元素渲染出来,Display. 把界面显示出来.
 
 > 2、Jsonp 的原理.
-
-利用script 标签的异步加载来实现的, 只能使用get 不能使用post.
-定义有 jsonp 的全局函数. 然后通过回调函数来获取返回值.
+利用script 标签的异步加载来实现的, 只能使用get 不能使用post.定义有 jsonp 的全局函数. 然后通过回调函数来获取返回值.
 function jsonp(req){
     var script = document.createElement('script');
     var url = req.url + '?callback=' + req.callback.name;
@@ -74,7 +74,7 @@ var child1 = new Child('kevin', '18');
 
 创建一个新的对象， 用父类的原型对象指向新的对象。 用子类的原型指向新的对象。
 
-这种方式的高效率体现它只调用了一次 Parent 构造函数，并且因此避免了在 Parent.prototype 上面创建不必要的、多余的属性。与此同时，原型链还能保持不变；因此，还能够正常使用 instanceof 和 isPrototypeOf。开发人员普遍认为寄生组合式继承是引用类型最理想的继承范式。。
+这种方式的高效率体现它只调用了一次 Parent 构造函数，并且因此避免了在 Parent.prototype 上面创建不必要的、多余的属性。与此同时，原型链还能保持不变；因此，还能够正常使用 instanceof 和 isPrototypeOf。开发人员普遍认为寄生组合式继承是引用类型最理想的继承范式。
 
 > 5、闭包.
 闭包 = 函数 + 自由变量.
@@ -193,8 +193,6 @@ https://yanhaijing.com/javascript/2014/04/29/what-is-the-execution-context-in-ja
 Eval代码——eval内部的文本被执行时。
 
 激活/变量对象【AO/VO】
-
-
 下面是解释器如果执行代码的伪逻辑：
 
 查找调用函数的代码。

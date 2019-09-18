@@ -132,3 +132,8 @@ CSS Modules - 模块化CSS，将CSS文件以模块的形式引入到JavaScript�
 代码冗余 - 由于样式重用的困难性等问题，导致代码冗余.
 
 ```
+
+参考文献:
+https://www.jianshu.com/p/15caa7af321c
+http://www.ruanyifeng.com/blog/2016/06/css_modules.html
+
