@@ -89,7 +89,7 @@ https://www.jianshu.com/p/e0ac7c3067eb
 2、过滤.
 移除用户上传的DOM属性,如onerror等.
 移除用户上传的Style节点，Script 节点, iframe节点.
-body: display:none !important
+body: display:none !important.
 
 3、校正.
 避免直接对HTML Entity编码.

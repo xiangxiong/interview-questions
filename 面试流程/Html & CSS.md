@@ -9,7 +9,7 @@ absolute:
 在Position属性值为absolute的同时，如果有一级父对象（无论是父对象还是祖父对象，或者再高的辈分，一样）的Position属性值为Relative时，则上述的相对浏览器窗口定位将会变成相对父对象定位，这对精确定位是很有帮助的
 
 fixed（固定定位):
-生成绝对定位的元素，相对于浏览器窗口进行定位。元素的位置通过 "left", "top", "right" 以及 "bottom" 属性进行规定。可通过z-index进行层次分级
+生成绝对定位的元素，相对于浏览器窗口进行定位。元素的位置通过 "left", "top", "right" 以及 "bottom" 属性进行规定。可通过z-index进行层次分级.
 
 static（静态定位）：默认值。没有定位，元素出现在正常的流中（忽略 top, bottom, left, right 或者 z-index 声明)
 
@@ -20,9 +20,11 @@ https://www.cnblogs.com/theWayToAce/p/5264436.html
 
 > Css 选择器:
 css 选择器:
-1、简单选择器。
+1、简单选择器.
+
 通过元素类型、class 或 id 匹配一个或多个元素
-2、属性选择器。
+2、属性选择器.
+
 如果希望选择有某个属性的元素，而不论属性值是什么，可以使用简单属性选择器.
 *[title] {color:red;}
 
@@ -39,10 +41,9 @@ css 选择器:
 4、伪元素。
 
 5、组合器。
-section > p {
+section > p{
   background-color: yellow;
 }
-
 h2 + p {
   text-transform: uppercase;
 }
@@ -60,14 +61,17 @@ https://segmentfault.com/a/1190000013424772
 (1) display:none; HTML元素（对象）的宽高，高度等各种属性值都将“丢失”,视为不存在，而且不加载
 (2) visibility:hidden; HTML元素（对象）仅仅是在视觉上看不见（完全透明），而它所占据的空间位置仍然存在，也即是说它仍然具有高度，宽度等属性值.
 
-
-> BFC (边距重叠解决方案).
-BFC的原理（渲染规则）,IFC：
-1、处于同一个BFC中的元素相互影响，可能会发生margin collapse.(边距重叠) (父子元素的边界重叠,兄弟元素的边界重叠.（垂直方向）,空元素的边界重叠)
+> BFC(边距重叠解决方案).
+BFC的原理（渲染规则）,IFC:
+1、处于同一个BFC中的元素相互影响，可能会发生margin collapse.(边距重叠) (父子元素的边界重叠,兄弟元素的边界重叠.（垂直方向）,空元素的边界重叠).
 2、bfc的区域不会与浮动元素的box重叠.
 3、bfc在页面上是一个独立的容器.(外面的元素，不会影响里面的元素.).
 4、计算bfc高度时，浮动元素也会参与计算.(BFC子元素即使是float也会参与计算.)
 记忆法关键字：渲染规则.
+
+参考文献:
+https://blog.csdn.net/weixin_39024580/article/details/79844451
+
 
 如何创建BFC?
 1、浮动 (float的值不为none)；
@@ -106,7 +110,7 @@ BFC的原理（渲染规则）,IFC：
 标准模型：content.  IE: content+border+padding.
 
 3、CSS如何设置这两种模型.
-box-sizing:content-box; box-sizing:border-box;
+  box-sizing:content-box; box-sizing:border-box;
 
 行内元素和块级元素的区别？
 	•块级元素：div,p,h1,form,ul,li.
@@ -137,3 +141,25 @@ CSS Modules - 模块化CSS，将CSS文件以模块的形式引入到JavaScript�
 https://www.jianshu.com/p/15caa7af321c
 http://www.ruanyifeng.com/blog/2016/06/css_modules.html
 
+BFC的原理（渲染规则）,IFC:
+1、处于同一个BFC中的元素相互影响，可能会发生margin collapse.(边距重叠) (父子元素的边界重叠,兄弟元素的边界重叠.（垂直方向）,空元素的边界重叠).
+2、bfc的区域不会与浮动元素的box重叠.
+3、bfc在页面上是一个独立的容器.(外面的元素，不会影响里面的元素.).
+4、计算bfc高度时，浮动元素也会参与计算.(BFC子元素即使是float也会参与计算.)
+记忆法关键字：渲染规则.
+
+如何创建BFC?
+1、浮动 (float的值不为none)；
+2、绝对定位元素（position的值为absolute或fixed）；
+6、overflow (溢出) 不为 visible.
+4、表格单元（display为table、table-cell、table-caption等HTML表格相关属性）；
+3、行内块 (display为inline-block)
+5、弹性盒 (display为flex或inline-flex)
+
+css 3 部分熟悉代码:
+css 3 新增了很多选择器,解决了很多之前需要用javascript 才能解决的问题.
+1、E:only-child: 选择属于其父元素的唯一子元素的每个E元素.
+2、E:nth-child(n): 选择属于其父元素的第n个子元素的每个E元素.
+3、E:nth-last-child(n): 选择属于其父元素的倒数第n个子元素的每个E元素.
+4、E:nth-of-type(n): 选择属于其父元素第n个E元素的每个E元素.
+5、
