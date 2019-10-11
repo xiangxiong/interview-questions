@@ -357,6 +357,7 @@ hooks 基本原理:
         3、推荐使用:createRef.callback ref 不推荐使用 string ref.
 
         为什么不推荐使用ref?
+        
         1、当 ref 定义为string 时,需要 React 追踪当前正在渲染的组件,在 reconciliation 阶段, React Element 创建.和更新的过程中, ref 会被包装为一个闭包函数, 等待 commit 阶段被执行，这会对React 的性能产生一些影响.
         2、当使用 render callback 模式的时候,使用 string ref 会造成 ref 挂载位置产生歧义.
 

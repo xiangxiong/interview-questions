@@ -17,7 +17,7 @@
     interruptedBy = fiber;
     resetStack();
   }
-
+  
   function resetStack(){
     if (nextUnitOfWork !== null) {
       let interruptedWork = nextUnitOfWork.return;

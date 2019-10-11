@@ -36,8 +36,7 @@
    浏览器缓存.
 
 优点:
-    1、suspense.
-    
+ 1、suspense.
  chrome 调试功能:
  在移动设备上使用开发者工具.在IOS上开始调试.
  https://www.html.cn/doc/chrome-devtools/device-mode/

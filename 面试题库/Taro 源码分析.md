@@ -11,10 +11,9 @@ Taro 主要做了两个方面的工作：编译以及运行时适配。编译过
 2、taro 的代码是如何转换成小程序代码的?
 
 taro 框架可以分为运行时和编译时。运行时负责把编译后到代码运行在本不能运行的对应环境中。小程序新建一个页面是使用 Page 方法传入一个字面量对象，并不支持使用类。如果全部依赖编译时的话，那么我们要做到事情大概就是把类转化成对象，把 state 变为 data，把生命周期例如 componentDidMount 转化成 onReady，把事件由可能的类函数（Class method）和类属性函数(Class property function) 转化成字面量对象方法（Object property function).
-编译时: 就是一个对输入的源代码进行语法分析，语法树构建，随后对语法树进行转换操作再解析生成目标代码的过程。
+编译时: 就是一个对输入的源代码进行语法分析，语法树构建，随后对语法树进行转换操作再解析生成目标代码的过程.
 
 how: 通过 Babel 把代码进行转换.
-
 运行时: 编译生成好的代码仍然不能直接运行在小程序环境里,Taro 小程序运行时要配合编译过程，抹平了状态、事件绑定以及生命周期的差异，使得 Taro 组件运行在小程序环境中.
 
 how: 
@@ -326,8 +325,6 @@ componentWillMount(),  对应: onLaunch().
 componentDidShow()  对应:onShow().
 componentDidHide()  对应:onError().
 
-
-
 参考文献:
 * http://taro-docs.jd.com/taro/docs/tutorial.html
 
@@ -367,3 +364,6 @@ taro 做得比较好的地方:
 2、Taro 物料市场.
 3、Taro 交流社区.
 
+
+
+PWA 是怎么一回事.

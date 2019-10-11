@@ -94,3 +94,7 @@ body: display:none !important.
 3、校正.
 避免直接对HTML Entity编码.
 使用DOM Parse转换，校正不匹配的DOM标签.
+
+--------- 
+
+DNS 劫持原理.

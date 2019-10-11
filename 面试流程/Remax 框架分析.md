@@ -9,15 +9,12 @@
 
 如何写出高质量的组件库:
 
-
 Remax 框架的基本原理:
-Remax 的实现原理和基于静态编译的方案有所不同，其核心其实是重新实现了 ReactDOM 的部分。
-众所周知，React 本身的设计就是支持跨端渲染的，render 部分和 React 的核心逻辑是解耦的（甚至不在一个 npm 包里）。主要的 render 有 ReactDOM（浏览器），ReactDOMServer（服务器端）和 ReactNative。
+Remax 的实现原理和基于静态编译的方案有所不同，其核心其实是重新实现了 ReactDOM 的部分.
+众所周知，React 本身的设计就是支持跨端渲染的，render 部分和 React 的核心逻辑是解耦的（甚至不在一个 npm 包里）。主要的 render 有 ReactDOM（浏览器），ReactDOMServer（服务器端）和 ReactNative.
 Remax 要做的事情和 ReactNative 要做的事情非常类似，我们重新接管了 ReactDOM 的 render。
 在原有的 React 页面中，React 在完成 Diff 发现需要修改界面时，又 ReactDOM 把改变 Patch 到页面上。
-
 而在小程序中由于我们不能直接修改页面，则由 React 完成 DIFF 后由 Remax 把修改 Patch 到内存中的虚拟 DOM 上，然后再通过小程序自己的虚拟 DOM 最后把改变同步到页面上.
-
 在这里我把这个过程说得非常简单，但实际上是有些坑要填的，主要也都是来自于小程序的限制，后续会有新的文章展开来讲。但是这种实现方式使得我们完全可以把 React 的代码放在小程序的环境中运行.
 
 现有的方案.
